@@ -42,7 +42,8 @@ def main(dvr_root=r'./chromedriver'):
 
     bro.refresh()
     sleep(3)
-    bro.find_element_by_id('all').click()
+    all_btn = bro.find_element_by_id('all')
+    bro.execute_script('arguments[0].click();', all_btn)
     sleep(1)
     bro.find_element_by_id('fav_epidemic').click()
     sleep(10)

@@ -26,4 +26,7 @@ jobs:
         env: 
           ID: ${{ secrets.ID }}
           PASS: ${{ secrets.PASS }}       
-        run: python main.py
+        run: |
+          sudo cp -p ./driver_for_workflow /usr/bin/
+          chmod -R 777 /usr/bin/chromedriver
+          python main.py

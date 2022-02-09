@@ -1,3 +1,4 @@
 **/.vscode/
 **/chromedriver
 **/__pycache__/
+.DS_Store

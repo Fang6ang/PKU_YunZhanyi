@@ -14,7 +14,9 @@ def gen_bro(root) -> webdriver.Chrome:
 
     option_head = Options()
     option_head.add_argument('--headless')
+    option_head.add_argument('--no-sandbox')
     option_head.add_argument('--disable-gpu')
+    option_head.add_argument('--disable-dev-shm-usage')
     return webdriver.Chrome(root, options=option, chrome_options=option_head)
 
 

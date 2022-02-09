@@ -50,4 +50,7 @@ def main(dvr_root=r'./chromedriver'):
 
 
 if __name__ == '__main__':
-    main('driver_for_workflow')
+
+    chromedriver = "/usr/bin/chromedriver"
+    os.environ["webdriver.chrome.driver"] = chromedriver
+    main(chromedriver)

@@ -13,8 +13,8 @@ def gen_bro(root) -> webdriver.Chrome:
     option.add_experimental_option('excludeSwitches', ['enable-automation'])
 
     option_head = Options()
-    # option_head.add_argument('--headless')
-    # option_head.add_argument('--disable-gpu')
+    option_head.add_argument('--headless')
+    option_head.add_argument('--disable-gpu')
     return webdriver.Chrome(root, options=option, chrome_options=option_head)
 
 
@@ -27,7 +27,7 @@ def mani(bro: webdriver.Chrome):
     bro.execute_script('app.saveMrtb()')
     sleep(2)
     bro.quit()
-    
+
     # bro.find_element_by_xpath('//*[@id="pane-daily_info_tab"]/form/div[4]/div/div[2]/label/span[2]').click()
     # bro.find_element_by_xpath('//*[@id="pane-daily_info_tab"]/form/div[9]/div/label[2]/span[2]').click()
     # bro.find_element_by_xpath('//*[@id="pane-daily_info_tab"]/form/div[15]/div/div/div[1]/input').click()

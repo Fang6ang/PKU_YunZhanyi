@@ -1,16 +1,16 @@
 from utils import mani, gen_bro
 from time import sleep
 from selenium.common.exceptions import NoSuchElementException
+import os
 
 url = 'https://portal.pku.edu.cn/'
 user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'
 webdvr_url = 'https://registry.npmmirror.com/-/binary/chromedriver/98.0.4758.80/chromedriver_linux64.zip'
 
-
-account = {
-    'id': 'xxx',
-    'pass': 'xxx'
-}
+# account = {
+#     'id': 'xxx',
+#     'pass': 'xxx'
+# }
 
 
 def main(dvr_root=r'./chromedriver'):
@@ -26,9 +26,9 @@ def main(dvr_root=r'./chromedriver'):
         sleep(2)
     sleep(2)
     id_input = bro.find_element_by_id('user_name')
-    id_input.send_keys(account['id'])
+    id_input.send_keys(os.environ['ID'])
     pass_input = bro.find_element_by_id('password')
-    pass_input.send_keys(account['pass'])
+    pass_input.send_keys(os.environ['PASS'])
     bro.find_element_by_id('logon_button').click()
     sleep(3)
 

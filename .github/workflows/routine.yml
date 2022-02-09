@@ -24,6 +24,6 @@ jobs:
       
       - name: Run
         env: 
-          USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
+          ID: ${{ secrets.ID }}
+          PASS: ${{ secrets.PASS }}       
         run: python main.py

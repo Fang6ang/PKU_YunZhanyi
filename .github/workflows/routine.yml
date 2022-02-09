@@ -28,5 +28,4 @@ jobs:
           PASS: ${{ secrets.PASS }}       
         run: |
           sudo cp -p ./driver_for_workflow /usr/bin/
-          chmod -R 777 /usr/bin/chromedriver
           python main.py

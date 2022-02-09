@@ -4,6 +4,8 @@ from selenium.common.exceptions import NoSuchElementException
 
 url = 'https://portal.pku.edu.cn/'
 user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'
+webdvr_url = 'https://registry.npmmirror.com/-/binary/chromedriver/98.0.4758.80/chromedriver_linux64.zip'
+
 
 account = {
     'id': 'xxx',
@@ -16,11 +18,13 @@ def main(dvr_root=r'./chromedriver'):
     bro.get(url)
 
     # Loggin portal
+    sleep(2)
     try:
-        bro.find_element_by_xpath('//*[@id="ng-app"]/div[1]/header/section/section[1]/section[1]/ul[1]/li/a').click()
+        bro.find_element_by_xpath('//*[@id="ng-app"]/div[1]/header/section/section[1]/section[2]/ul[1]/li/a').click()
+        print('clicked')
     except NoSuchElementException: # The page's been auto relocated
         sleep(2)
-
+    sleep(2)
     id_input = bro.find_element_by_id('user_name')
     id_input.send_keys(account['id'])
     pass_input = bro.find_element_by_id('password')
@@ -39,6 +43,7 @@ def main(dvr_root=r'./chromedriver'):
     bro.refresh()
     sleep(3)
     bro.find_element_by_id('all').click()
+    sleep(1)
     bro.find_element_by_id('fav_epidemic').click()
     sleep(10)
     mani(bro)

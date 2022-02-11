@@ -28,6 +28,7 @@ def mani(bro: webdriver.Chrome):
     bro.execute_script(DAILY_INFO_FORM)
     bro.execute_script('app.saveMrtb()')
     sleep(2)
+    bro.refresh()
     bro.quit()
 
     # bro.find_element_by_xpath('//*[@id="pane-daily_info_tab"]/form/div[4]/div/div[2]/label/span[2]').click()

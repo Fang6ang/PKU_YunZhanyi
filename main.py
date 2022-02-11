@@ -31,6 +31,7 @@ def main(dvr_root=r'./chromedriver'):
     pass_input.send_keys(os.environ['PASS'])
     bro.find_element_by_id('logon_button').click()
     sleep(3)
+    print(f'Log in with ID: {os.environ["ID"]}')
 
     # try:
     #     btn = bro.find_element_by_xpath('//*[@id="bizTip"]/div/div/div[1]/div/div/table/tbody/tr[11]/td/a')
